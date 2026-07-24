@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University | Blog</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <section class="sub-header">
+
+        <nav>
+
+            <a href="{{ url_for('index') }}">
+                <img src="{{ url_for('static', filename='images/small-logo-png.png') }}" alt="University Logo">
+            </a>
+
+            <div class="nav-links" id="navLinks">
+
+                <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+
+                <ul>
+                    <li><a href="{{ url_for('index') }}">HOME</a></li>
+                    <li><a href="{{ url_for('about') }}">ABOUT</a></li>
+                    <li><a href="{{ url_for('course') }}">COURSE</a></li>
+                    <li><a href="{{ url_for('blog') }}">BLOG</a></li>
+                    <li><a href="{{ url_for('contact') }}">CONTACT</a></li>
+                    <li><a href="{{ url_for('trainer') }}">TRAINER</a></li>
+                </ul>
+
+            </div>
+
+            <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+
+        </nav>
+
+        <h1>Our Certificate & Online Programs For 2025</h1>
+
+    </section>
+
+    <!-- Blog Content -->
+
+    <section class="blog-content">
+
+        <div class="row">
+
+            <div class="blog-left">
+
+                <img src="{{ url_for('static', filename='images/certificate.jpg') }}" alt="Certificate Programs">
+
+                <h2>Our Certificate & Online Programs For 2025</h2>
+
+                <p>
+                    SVVV is a prestigious institution known for its academic excellence,
+                    vibrant campus life, and commitment to innovation. With a diverse
+                    student community and experienced faculty members, the university
+                    provides an excellent learning environment that encourages
+                    creativity, research, and global exposure.
+                </p>
+
+                <br>
+
+                <p>
+                    My experience at the university has been truly rewarding.
+                    The faculty members are supportive and knowledgeable,
+                    the campus is equipped with modern facilities,
+                    and students receive numerous opportunities for
+                    academic and personal development.
+                </p>
+
+                <br>
+
+                <p>
+                    The university library provides an extensive collection
+                    of books, journals, digital resources, online databases,
+                    and comfortable reading spaces. These facilities support
+                    research activities, academic excellence, and self-learning.
+                </p>
+
+                <!-- Comment Box -->
+
+                <div class="comment-box">
+
+                    <h3>Leave a Comment</h3>
+
+                    <form class="comment-form" action="{{ url_for('blog') }}" method="POST">
+
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="Enter Name"
+                            required>
+
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Enter Email"
+                            required>
+
+                        <textarea
+                            rows="5"
+                            name="comment"
+                            placeholder="Your Comment"
+                            required></textarea>
+
+                        <button
+                            type="submit"
+                            class="hero-btn red-btn">
+                            POST COMMENT
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+            <!-- Sidebar -->
+
+            <div class="blog-right">
+
+                <h3>Post Categories</h3>
+
+                <div>
+                    <span>Business Analytics</span>
+                    <span>21</span>
+                </div>
+
+                <div>
+                    <span>Data Science</span>
+                    <span>27</span>
+                </div>
+
+                <div>
+                    <span>Machine Learning</span>
+                    <span>18</span>
+                </div>
+
+                <div>
+                    <span>Computer Science</span>
+                    <span>25</span>
+                </div>
+
+                <div>
+                    <span>Law</span>
+                    <span>20</span>
+                </div>
+
+                <div>
+                    <span>Management</span>
+                    <span>29</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+
+    <section class="footer">
+
+        <h4>About Us</h4>
+
+        <p>
+            The footer provides quick access to university information,
+            contact details, important links, and social media platforms,
+            helping visitors easily navigate the website.
+        </p>
+
+        <div class="icons">
+
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+
+        </div>
+
+        <p>
+            Made with <i class="fa-regular fa-heart"></i> by Abhishek
+        </p>
+
+    </section>
+
+    <!-- JavaScript -->
+
+    <script>
+
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+
+    </script>
+
+</body>
+
+</html>
